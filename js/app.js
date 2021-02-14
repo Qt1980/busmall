@@ -8,6 +8,8 @@ let indexArray = [];
 let imageOne = document.querySelector('section img:first-child');
 let imageTwo = document.querySelector('section img:nth-child(2)');
 let imageThree = document.querySelector('section img:nth-child(3)');
+let myContainer = document.querySelector('section');
+let myButton = document.querySelector('div');
 // console.log(imageThree);
 
 function Thing(name, fileExtension = 'jpg') {
@@ -94,4 +96,18 @@ for (let i = 0; i < allThings.length; i++){
   }
 }
 renderThing();
+if (totalClicks === clickAllowed) {
+  myContainer.removeEventListener('click', handleClick);
+}
 
+function handleButtonClick(event){
+  if(totalClicks === clickAllowed){
+    renderResults();
+  }
+}
+
+renderThing();
+
+
+myContainer.addEventListener('click', handleClick);
+myButton.addEventListener('click', handleButtonClick);

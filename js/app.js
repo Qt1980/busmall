@@ -4,6 +4,7 @@
 let totalClicks = 0;
 let clickAllowed = 25;
 let allThings =[];
+let indexArray = [];
 let imageOne = document.querySelector('section img:first-child');
 let imageTwo = document.querySelector('section img:nth-child(2)');
 let imageThree = document.querySelector('section img:nth-child(3)');

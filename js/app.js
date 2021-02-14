@@ -8,7 +8,7 @@ let indexArray = [];
 let imageOne = document.querySelector('section img:first-child');
 let imageTwo = document.querySelector('section img:nth-child(2)');
 let imageThree = document.querySelector('section img:nth-child(3)');
-console.log(imageThree);
+// console.log(imageThree);
 
 function Thing(name, fileExtension = 'jpg') {
   this.name = name;
@@ -32,7 +32,7 @@ new Thing('pen');
 new Thing('pet-sweep');
 new Thing('scissors');
 new Thing('shark');
-new Thing('sweep');
+new Thing('sweep', 'png');
 new Thing('tauntaun');
 new Thing('unicorn');
 new Thing('water-can');
@@ -43,7 +43,24 @@ function getRandomIndex() {
 }
 
 function renderThing() {
-  let firstThingIndex = getRandomIndex();
-  let secondThingIndex = getRandomIndex();
-  let thirdThingIndex = getRandomIndex();
+  // console.log(!array1.includes(2));
+  while(indexArray.length < 3) {
+    let randomIndex = getRandomIndex();
+    while(!indexArray.includes(randomIndex)) {
+      indexArray.push(randomIndex);
+
+    }
+
+  }
+
+  let firstThingIndex = indexArray.pop();
+  let secondThingIndex = indexArray.pop();
+  let thirdThingIndex = indexArray.pop();
+
+  imageOne.src = allThings[firstThingIndex].src;
+  imageOne.title = allThings[firstThingIndex].name;
+  allThings[firstThingIndex].views++;
+
 }
+renderThing();
+console.log(indexArray);

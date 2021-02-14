@@ -61,6 +61,37 @@ function renderThing() {
   imageOne.title = allThings[firstThingIndex].name;
   allThings[firstThingIndex].views++;
 
+  imageTwo.src = allThings[secondThingIndex].src;
+  imageTwo.title = allThings[secondThingIndex].name;
+  allThings[secondThingIndex].views++;
+
+  imageThree.src = allThings[thirdThingIndex].src;
+  imageThree.title = allThings[thirdThingIndex].name;
+  allThings[thirdThingIndex].views++;
+}
+
+function renderResults() {
+  let mylist = document.querySelector('ul');
+  for(let i = 0; i < allThings.length; i++);{
+    let li = document.createElement('li');
+    li.textContent - `${allThings[i].name} had ${allThings[i].views} votes, and was seen ${allThings[i].clicks} times`;
+    mylist.appendChild(li);
+  }
+}
+
+function handleClick(event) {
+  if (event.target === myContainer){
+    alert('Please follow instructions and click an image');
+  }
+}
+
+totalClicks++;
+let allClicked = event.target.title;
+
+for (let i = 0; i < allThings.length; i++){
+  if(allClicked === allThings[i].name) {
+    allThings[i].clicks++;
+  }
 }
 renderThing();
-console.log(indexArray);
+

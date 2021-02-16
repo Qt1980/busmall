@@ -1,16 +1,70 @@
 body {
-    background-color: white;
-    margin-top: 50px;
-    margin-left: 150px;
-    margin-right: 150px;
+    background-color: paleturquoise;
   }
 
-#headers {
-  margin-left: 60px;
-  margin-bottom: 20px;
+h1 {
+  font-size: 60px;
+  text-align: center;
+  background-color: cornflowerblue;
+  color: white;
+  width: 400px;
+  margin: auto;
+  margin-top: 30px;
+  padding: 10px;
 }
 
-img {
-  width: 200px;
-  height: 200px;
+h2 {
+  font-size: 50px;
+  text-align: center;
+  width: max-content;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: orchid;
+  padding: 10px;
+}
+
+section {
+  background-color: cornflowerblue;
+  width: max-content;
+  margin: auto;
+  margin-top: 30px;
+}
+
+section img {
+  padding: 10px;
+  width: 500px;
+  height: 500px;
+  margin: 40px;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+div {
+  background-color:orchid;
+  padding: 10px;
+  width: max-content;
+  margin: auto;
+  margin-top: 30px;
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 25%;
+}
+
+div:hover {
+ cursor: pointer;
+}
+
+ul {
+  font-size: 30px;
+  text-align: center;
+  margin: auto;
+  margin-top: 15px;
+  background-color: cornflowerblue;
+  padding: 10px;
+  width: max-content;
 }

@@ -22,7 +22,7 @@ function Thing(name, fileExtension = 'jpg') {
 
 new Thing('banana');
 new Thing('usb', 'gif');
-new Thing('bad');
+new Thing('bag');
 new Thing('bathroom');
 new Thing('boots');
 new Thing('breakfast');
@@ -74,37 +74,40 @@ function renderThing() {
 
 function renderResults() {
   let mylist = document.querySelector('ul');
-  for(let i = 0; i < allThings.length; i++);{
+  for(let i = 0; i < allThings.length; i++){
     let li = document.createElement('li');
-    li.textContent - `${allThings[i].name} had ${allThings[i].views} votes, and was seen ${allThings[i].clicks} times`;
+    li.textContent = `${allThings[i].name} had ${allThings[i].views} votes, and was seen ${allThings[i].clicks} times`;
     mylist.appendChild(li);
   }
 }
 
 function handleClick(event) {
   if (event.target === myContainer){
-    alert('Please follow instructions and click an image');
+    alert('Please click on an image and only an image');
+  }
+
+  totalClicks++;
+  let allClicked = event.target.title;
+
+  for (let i = 0; i < allThings.length; i++){
+    if(allClicked === allThings[i].name) {
+      allThings[i].clicks++;
+    }
+  }
+  renderThing();
+  if (totalClicks === clickAllowed) {
+    myContainer.removeEventListener('click', handleClick);
   }
 }
 
-totalClicks++;
-let allClicked = event.target.title;
 
-for (let i = 0; i < allThings.length; i++){
-  if(allClicked === allThings[i].name) {
-    allThings[i].clicks++;
-  }
-}
-renderThing();
-if (totalClicks === clickAllowed) {
-  myContainer.removeEventListener('click', handleClick);
-}
-
-function handleButtonClick(event){
+function handleButtonClick(event){ //eslint-disable-line
   if(totalClicks === clickAllowed){
     renderResults();
   }
 }
+
+
 
 renderThing();
 

@@ -5,6 +5,7 @@ let totalClicks = 0;
 let clickAllowed = 25;
 let allThings =[];
 let indexArray = [];
+let imageCount = 6;
 let imageOne = document.querySelector('section img:first-child');
 let imageTwo = document.querySelector('section img:nth-child(2)');
 let imageThree = document.querySelector('section img:nth-child(3)');
@@ -45,8 +46,7 @@ function getRandomIndex() {
 }
 
 function renderThing() {
-  // console.log(!array1.includes(2));
-  while(indexArray.length < 3) {
+  while(indexArray.length < imageCount) {
     let randomIndex = getRandomIndex();
     while(!indexArray.includes(randomIndex)) {
       indexArray.push(randomIndex);
@@ -55,9 +55,9 @@ function renderThing() {
 
   }
 
-  let firstThingIndex = indexArray.pop();
-  let secondThingIndex = indexArray.pop();
-  let thirdThingIndex = indexArray.pop();
+  let firstThingIndex = indexArray.shift();
+  let secondThingIndex = indexArray.shift();
+  let thirdThingIndex = indexArray.shift();
 
   imageOne.src = allThings[firstThingIndex].src;
   imageOne.title = allThings[firstThingIndex].name;

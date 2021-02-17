@@ -117,14 +117,14 @@ function renderChart() {
         data: thingViews,
         backgroundColor: 'rgba(153, 102, 255, 0.2)',
         borderColor: 'rgba(255, 206, 86, 1)',
-        borderWidth: 3
+        borderWidth: 4
       },
       {
         label: 'Clicks',
         data: thingClicks,
         backgroundColor: 'rgba(255, 206, 86, 1)',
         borderColor: 'rgba(153, 102, 255, 0.2)',
-        borderWidth: 3
+        borderWidth: 4
       }]
     },
     options: {

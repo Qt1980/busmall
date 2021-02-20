@@ -19,25 +19,33 @@ function Thing(name, fileExtension = 'jpg') {
   allThings.push(this);
 }
 
-new Thing('banana');
-new Thing('usb', 'gif');
-new Thing('bag');
-new Thing('bathroom');
-new Thing('boots');
-new Thing('breakfast');
-new Thing('chair');
-new Thing('cthulhu');
-new Thing('dog-duck');
-new Thing('dragon');
-new Thing('pen');
-new Thing('pet-sweep');
-new Thing('scissors');
-new Thing('shark');
-new Thing('sweep', 'png');
-new Thing('tauntaun');
-new Thing('unicorn');
-new Thing('water-can');
-new Thing('wine-glass');
+let retrievedThings = localStorage.getItem('things');
+// console.log(retrievedThings);
+if(retrievedThings){
+  let parsedThings = JSON.parse(retrievedThings);
+  allThings = parsedThings;
+} else {
+  new Thing('banana');
+  new Thing('usb', 'gif');
+  new Thing('bag');
+  new Thing('bathroom');
+  new Thing('boots');
+  new Thing('breakfast');
+  new Thing('chair');
+  new Thing('cthulhu');
+  new Thing('dog-duck');
+  new Thing('dragon');
+  new Thing('pen');
+  new Thing('pet-sweep');
+  new Thing('scissors');
+  new Thing('shark');
+  new Thing('sweep', 'png');
+  new Thing('tauntaun');
+  new Thing('unicorn');
+  new Thing('water-can');
+  new Thing('wine-glass');
+}
+
 
 function getRandomIndex() {
   return Math.floor(Math.random() * allThings.length);

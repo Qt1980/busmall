@@ -11,6 +11,8 @@ h1 {
   margin: auto;
   margin-top: 30px;
   padding: 10px;
+  border-width: 5px;
+  border: dashed blue;
 }
 
 h2 {
@@ -39,6 +41,7 @@ section img {
 }
 
 #chart {
+  display: none;
   height: 350px;
   width: 800px;
 }

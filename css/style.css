@@ -11,8 +11,12 @@ h1 {
   margin: auto;
   margin-top: 30px;
   padding: 10px;
-  border-width: 5px;
   border: solid blue;
+  border-width: 5px;
+<<<<<<< HEAD
+  border: solid blue;
+=======
+>>>>>>> 770877a0ae71b785c08c6f302298855a59f17cdb
 }
 
 h2 {

@@ -95,7 +95,11 @@ function handleClick(event) {
   renderThing();
   if (totalClicks === clickAllowed) {
     myContainer.removeEventListener('click', handleClick);
+    let thingChart = document.getElementById('chart');
+    thingChart.style.display = 'block';
     renderChart();
+    let stringifiedThings = JSON.stringify(allThings);
+    localStorage.setItem('things', stringifiedThings);
   }
 }
 

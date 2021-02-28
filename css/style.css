@@ -12,6 +12,7 @@ h1 {
   margin-top: 30px;
   padding: 10px;
   border: solid blue;
+  border-width: 5px;
 }
 
 h2 {
@@ -40,6 +41,7 @@ section img {
 }
 
 #chart {
+  display: none;
   height: 350px;
   width: 800px;
 }
